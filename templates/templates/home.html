@@ -1,0 +1,9 @@
+{% if usuario.is_authenticated %}
+    <h2>Hola, {{ usuario.nombre }}</h2>
+    <a href="{{ url_for('dashboard') }}">Ir al Dashboard</a>
+    <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
+{% else %}
+    <h2>Bienvenido</h2>
+    <a href="{{ url_for('login') }}">Iniciar Sesión</a>
+    <a href="{{ url_for('register') }}">Registrarse</a>
+{% endif %}
